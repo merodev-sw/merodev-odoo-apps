@@ -4,15 +4,21 @@
     "summary": "Restrict warehouse operations by allowed locations and control transfer validation",
     "category": "Inventory/Inventory",
     "author": "Merodev Software",
+    "website": "https://www.merodev.com/",
     "license": "LGPL-3",
     "depends": ["stock"],
-    'website': 'https://www.merodev.com/',  
+
+    "images": [
+        "static/description/banner.png",
+    ],
+
     "data": [
         "security/groups.xml",
         "security/stock_security.xml",
         "views/res_users_views.xml",
         "views/product_views.xml",
     ],
+
     "installable": True,
     "application": False,
 }
