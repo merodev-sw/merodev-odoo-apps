@@ -9,7 +9,7 @@
     "depends": ["stock"],
 
     "images": [
-        "static/description/banner.png",
+        "static/description/icon_banner.png",
     ],
 
     "data": [
