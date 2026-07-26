@@ -17,7 +17,7 @@
                             ('location_dest_id', 'child_of', user.not_allowed_transfer_location_ids.ids)
                 ]
             </field>
-            <field name="groups" eval="[(4, ref('stock_location_access_control.group_restricted_warehouse_user'))]"/>
+            <field name="groups" eval="[(4, ref('group_restricted_warehouse_user'))]"/>
         </record>
 
     </data>
