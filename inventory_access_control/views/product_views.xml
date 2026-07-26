@@ -1,75 +1,111 @@
 <odoo>
     <data>
 
-        <record id="view_product_template_form_hide_prices_restricted_user" model="ir.ui.view">
-            <field name="name">product.template.form.hide.prices.restricted.user</field>
+        <!-- Hide product sales price and cost -->
+        <record
+            id="view_product_template_form_hide_prices_restricted_user"
+            model="ir.ui.view"
+        >
+            <field name="name">
+                product.template.form.hide.prices.restricted.user
+            </field>
+
             <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+
+            <field
+                name="inherit_id"
+                ref="product.product_template_only_form_view"
+            />
+
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='list_price']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
+
+                <xpath
+                    expr="//field[@name='list_price']"
+                    position="attributes"
+                >
+                    <attribute name="groups">
+                        !inventory_access_control.group_restricted_warehouse_user
+                    </attribute>
                 </xpath>
-                <xpath expr="//field[@name='standard_price']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
+
+                <xpath
+                    expr="//field[@name='standard_price']"
+                    position="attributes"
+                >
+                    <attribute name="groups">
+                        !inventory_access_control.group_restricted_warehouse_user
+                    </attribute>
                 </xpath>
+
             </field>
         </record>
 
-        <record id="view_product_template_tree_hide_prices_restricted_user" model="ir.ui.view">
-            <field name="name">product.template.tree.hide.prices.restricted.user</field>
+
+        <!-- Hide sales price from product template list -->
+        <record
+            id="view_product_template_tree_hide_prices_restricted_user"
+            model="ir.ui.view"
+        >
+            <field name="name">
+                product.template.tree.hide.prices.restricted.user
+            </field>
+
             <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_tree_view"/>
+
+            <field
+                name="inherit_id"
+                ref="product.product_template_tree_view"
+            />
+
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='list_price']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
+
+                <xpath
+                    expr="//field[@name='list_price']"
+                    position="attributes"
+                >
+                    <attribute name="groups">
+                        !inventory_access_control.group_restricted_warehouse_user
+                    </attribute>
                 </xpath>
+
             </field>
         </record>
 
-        <record id="view_product_product_form_hide_prices_restricted_user" model="ir.ui.view">
-            <field name="name">product.product.form.hide.prices.restricted.user</field>
+
+        <!-- Hide variant price and cost -->
+        <record
+            id="view_product_product_form_hide_prices_restricted_user"
+            model="ir.ui.view"
+        >
+            <field name="name">
+                product.product.form.hide.prices.restricted.user
+            </field>
+
             <field name="model">product.product</field>
-            <field name="inherit_id" ref="product.product_normal_form_view"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='lst_price']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
-                </xpath>
-                <xpath expr="//field[@name='standard_price']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
-                </xpath>
-            </field>
-        </record>
 
-        <record id="view_product_stock_list_hide_values_restricted_user" model="ir.ui.view">
-            <field name="name">product.product.stock.list.hide.values.restricted.user</field>
-            <field name="model">product.product</field>
-            <field name="inherit_id" ref="stock.product_product_stock_tree"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='avg_cost']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
-                </xpath>
-                <xpath expr="//field[@name='total_value']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
-                </xpath>
-            </field>
-        </record>
+            <field
+                name="inherit_id"
+                ref="product.product_normal_form_view"
+            />
 
-        <record id="view_product_template_form_hide_taxes_restricted_user" model="ir.ui.view">
-            <field name="name">product.template.form.hide.taxes.restricted.user</field>
-            <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_only_form_view"/>
             <field name="arch" type="xml">
 
-                <xpath expr="//label[@for='taxes_id']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
+                <xpath
+                    expr="//field[@name='lst_price']"
+                    position="attributes"
+                >
+                    <attribute name="groups">
+                        !inventory_access_control.group_restricted_warehouse_user
+                    </attribute>
                 </xpath>
 
-                <xpath expr="//div[@name='taxes_div']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
-                </xpath>
-
-                <xpath expr="//field[@name='supplier_taxes_id']" position="attributes">
-                    <attribute name="groups">!stock_location_access_control.group_restricted_warehouse_user</attribute>
+                <xpath
+                    expr="//field[@name='standard_price']"
+                    position="attributes"
+                >
+                    <attribute name="groups">
+                        !inventory_access_control.group_restricted_warehouse_user
+                    </attribute>
                 </xpath>
 
             </field>
